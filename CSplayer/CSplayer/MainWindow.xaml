@@ -8,6 +8,7 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <MediaElement x:Name="mediaElement" HorizontalAlignment="Left" Height="249" Margin="187,86,0,0" VerticalAlignment="Top" Width="405"/>
+        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="360,351,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
