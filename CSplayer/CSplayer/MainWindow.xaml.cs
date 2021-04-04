@@ -24,5 +24,34 @@ namespace CSplayer
         {
             InitializeComponent();
         }
+        public void TestStart()
+        {
+            mainVideo.Source = new Uri(@"D:\ДУТ\Diplom\Material\Video.avi");
+        }
+
+        private void DropPanel_Drop(object sender, DragEventArgs e)
+        {
+            MessageBox.Show("Oh hi Mark");
+        }
+
+        private void DropPanel_DragEnter(object sender, DragEventArgs e)
+        {
+            TestStart();
+        }
+
+        private void DropPanel_GotMouseCapture(object sender, MouseEventArgs e)
+        {
+            TestStart();
+        }
+
+        private void DropPanel_MouseEnter(object sender, MouseEventArgs e)
+        {
+            TestStart();
+        }
+
+        private void addVideoButton_Click(object sender, RoutedEventArgs e)
+        {
+            TestStart();
+        }
     }
 }
