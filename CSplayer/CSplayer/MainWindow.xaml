@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CSplayer"
         mc:Ignorable="d"
-        Title="MainWindow" Height="565" Width="728" MinWidth="800" MinHeight="600">
+        Title="CSPlayer" Height="565" Width="728" MinWidth="800" MinHeight="600">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -22,20 +22,20 @@
                     </LinearGradientBrush>
                 </Grid.Background>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="90*"/>
-                    <ColumnDefinition Width="180*"/>
-                    <ColumnDefinition Width="90*"/>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="37*"/>
+                    <ColumnDefinition Width="80*"/>
+                    <ColumnDefinition Width="40*"/>
                 </Grid.ColumnDefinitions>
-                <Slider x:Name="slider" Margin="10,-6,10,40" Grid.ColumnSpan="3"/>
-                <Button x:Name="stopButton" Margin="126,11,14,13" MaxWidth="35" MaxHeight="35"/>
-                <Button x:Name="playButton" Margin="10,12,155,14" MaxWidth="35" MaxHeight="35" Width="35"/>
-                <Button x:Name="pauseButton" Margin="77,11,88,13" MaxWidth="35" MaxHeight="35" Width="35"/>
-                <Label x:Name="volumeLabel" Content="Volume" Grid.Column="2" HorizontalAlignment="Center" Margin="0,12,0,0" VerticalAlignment="Top" Width="56" Panel.ZIndex="2" Foreground="White" MaxWidth="80" MaxHeight="25" RenderTransformOrigin="1.356,0.56"/>
-                <Button x:Name="addVideoButton" Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Width="356" MaxWidth="500" MaxHeight="40" Grid.Column="1" Click="addVideoButton_Click"/>
-                <Slider x:Name="slider1" Grid.Column="2" HorizontalAlignment="Center" Margin="0,42,0,0" VerticalAlignment="Top" Width="180"/>
+                <Button x:Name="stopButton" Margin="111,11,14,13" MaxWidth="35" MaxHeight="35" Content="stop" Click="stopButton_Click" Grid.Column="1"/>
+                <Button x:Name="playButton" Margin="10,12,155,14" MaxWidth="35" MaxHeight="35" Width="35" Content="play" Click="playButton_Click" Grid.ColumnSpan="2"/>
+                <Button x:Name="pauseButton" Margin="62,11,88,13" MaxWidth="35" MaxHeight="35" Width="35" Content="pause" Click="pauseButton_Click" Grid.Column="1"/>
+                <Label x:Name="volumeLabel" Content="Volume" Grid.Column="3" HorizontalAlignment="Center" Margin="0,12,0,0" VerticalAlignment="Top" Width="56" Panel.ZIndex="2" Foreground="White" MaxWidth="80" MaxHeight="25" RenderTransformOrigin="1.356,0.56"/>
+                <Button x:Name="addVideoButton" Content="AddVideo_button&#xD;&#xA;" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Width="356" MaxWidth="500" MaxHeight="40" Grid.Column="2" Click="addVideoButton_Click"/>
+                <Slider x:Name="volumeSlide" Grid.Column="3" HorizontalAlignment="Center" Margin="0,42,0,0" VerticalAlignment="Top" Width="180" Value="2" TickFrequency="0.1" ValueChanged="volumeSlide_ValueChanged" Maximum="5"/>
+                <ScrollBar x:Name="videoBar" Margin="9,-10,9,63" Orientation="Horizontal" Width="auto" Grid.ColumnSpan="4" Maximum="50" Scroll="videoBar_Scroll" PreviewMouseDown="videoBar_PreviewMouseDown"/>
             </Grid>
-            <MediaElement x:Name="mainVideo" OpacityMask="Black" Margin="5,5,5,15" AllowDrop="True"/>
-            <StackPanel x:Name="DropPanel" Width="792" DockPanel.Dock="Left" Panel.ZIndex="5" Drop="DropPanel_Drop" AllowDrop="True" DragEnter="DropPanel_DragEnter"/>
+            <MediaElement x:Name="mainVideo" OpacityMask="Black" Margin="5,5,5,15" AllowDrop="True" MediaOpened="mainVideo_MediaOpened"/>
         </DockPanel>
     </Grid>
 </Window>
