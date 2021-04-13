@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ДУТ\\Diplom\\Repository\\CSplayer\\CSplayer\\CSplayer.csproj": {}
+    "D:\\ДУТ\\Diplom\\Repository\\CSPlayer\\CSplayer\\CSplayer.csproj": {}
   },
   "projects": {
-    "D:\\ДУТ\\Diplom\\Repository\\CSplayer\\CSplayer\\CSplayer.csproj": {
+    "D:\\ДУТ\\Diplom\\Repository\\CSPlayer\\CSplayer\\CSplayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ДУТ\\Diplom\\Repository\\CSplayer\\CSplayer\\CSplayer.csproj",
+        "projectUniqueName": "D:\\ДУТ\\Diplom\\Repository\\CSPlayer\\CSplayer\\CSplayer.csproj",
         "projectName": "CSplayer",
-        "projectPath": "D:\\ДУТ\\Diplom\\Repository\\CSplayer\\CSplayer\\CSplayer.csproj",
+        "projectPath": "D:\\ДУТ\\Diplom\\Repository\\CSPlayer\\CSplayer\\CSplayer.csproj",
         "packagesPath": "C:\\Users\\Frost\\.nuget\\packages\\",
-        "outputPath": "D:\\ДУТ\\Diplom\\Repository\\CSplayer\\CSplayer\\obj\\",
+        "outputPath": "D:\\ДУТ\\Diplom\\Repository\\CSPlayer\\CSplayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
