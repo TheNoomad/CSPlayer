@@ -32,7 +32,7 @@
                 <Button x:Name="pauseButton" Margin="62,11,88,13" MaxWidth="35" MaxHeight="35" Width="35" Content="pause" Click="pauseButton_Click" Grid.Column="1"/>
                 <Label x:Name="volumeLabel" Content="Volume" Grid.Column="3" HorizontalAlignment="Center" Margin="0,12,0,0" VerticalAlignment="Top" Width="56" Panel.ZIndex="2" Foreground="White" MaxWidth="80" MaxHeight="25" RenderTransformOrigin="1.356,0.56"/>
                 <Button x:Name="addVideoButton" Content="AddVideo_button&#xD;&#xA;" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Width="356" MaxWidth="500" MaxHeight="40" Grid.Column="2" Click="addVideoButton_Click"/>
-                <Slider x:Name="volumeSlide" Grid.Column="3" HorizontalAlignment="Center" Margin="0,42,0,0" VerticalAlignment="Top" Width="180" Value="2" TickFrequency="0.1" ValueChanged="volumeSlide_ValueChanged" Maximum="5"/>
+                <Slider x:Name="volumeSlide" Grid.Column="3" HorizontalAlignment="Center" Margin="0,42,0,0" VerticalAlignment="Top" Width="180" Value="5" TickFrequency="0.1" ValueChanged="volumeSlide_ValueChanged" Maximum="5"/>
                 <ScrollBar x:Name="videoBar" Margin="9,-10,9,63" Orientation="Horizontal" Width="auto" Grid.ColumnSpan="4" Maximum="50" Scroll="videoBar_Scroll" PreviewMouseDown="videoBar_PreviewMouseDown"/>
             </Grid>
             <MediaElement x:Name="mainVideo" OpacityMask="Black" Margin="5,5,5,15" AllowDrop="True" MediaOpened="mainVideo_MediaOpened"/>
