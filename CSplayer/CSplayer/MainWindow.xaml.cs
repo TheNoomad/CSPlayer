@@ -1,7 +1,9 @@
 ﻿using Microsoft.Win32;
 using System;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Threading;
+using System.IO;
 
 namespace CSplayer
 {
@@ -12,6 +14,9 @@ namespace CSplayer
     {
         DispatcherTimer timerVideoTime = new DispatcherTimer();
         bool isPlaying = false;
+        List<string> playList = new List<string>();
+        string currentVideoName;
+        int currentVideoNumber;
         public MainWindow()
         {
             InitializeComponent();
@@ -28,6 +33,14 @@ namespace CSplayer
         private void timer_Tick(object sender, EventArgs e)
         {
             ShowPosition();
+
+            if (mainVideo.Source != null)
+            {
+                if (mainVideo.NaturalDuration.HasTimeSpan)
+                    videoTime.Content = String.Format("{0} / {1}", mainVideo.Position.ToString(@"mm\:ss"), mainVideo.NaturalDuration.TimeSpan.ToString(@"mm\:ss"));
+            }
+            else
+                videoTime.Content = "No file selected...";
         }
         public void SetMediaElementDefault()
         {
@@ -42,9 +55,14 @@ namespace CSplayer
                 Filter = "(mp3,wav,mp4,mov,wmv,mpg)|*.mp3;*.wav;*.mp4;*.mov;*.wmv;*.mpg;*.avi|all files|*.*",
                 InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
             };
+            ofg.Multiselect = true;
             if (ofg.ShowDialog() == true)
             {
-                VideoLoad(ofg.FileName);
+                foreach (string item in ofg.FileNames)
+                    { 
+                        playList.Add(item);
+                    }
+                VideoLoad(playList[0], 0);
             }
         }
         public void CheckVideoState()
@@ -65,10 +83,20 @@ namespace CSplayer
             }
         }
 
-        public void VideoLoad(string video)
+        public void VideoLoad(string video, int position)
         {
             mainVideo.Source = new Uri(video);
+            currentVideoName = video;
+            currentVideoNumber = position;
+            SetVideoName();
             CheckVideoState();
+        }
+        public void ChangeVideo(string video, int position)
+        {
+            mainVideo.Source = new Uri(video);
+            currentVideoName = video;
+            currentVideoNumber = position;
+            SetVideoName();
         }
         public void ShowPosition()
         {
@@ -128,9 +156,44 @@ namespace CSplayer
 
         private void volumeSlide_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            if(isPlaying)
+            if (isPlaying)
                 mainVideo.Volume = (double)volumeSlide.Value;
+        }
 
+        private void previousVideoButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (isPlaying)
+            {
+                if (currentVideoNumber == 0)
+                {
+                    ChangeVideo(playList[playList.Count-1], playList.Count-1);
+                }
+                else
+                {
+                    ChangeVideo(playList[currentVideoNumber - 1], currentVideoNumber - 1);
+                }
+                mainVideo.Play();
+            }
+        }
+
+        private void nextVideoButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (isPlaying)
+            {
+                if (currentVideoNumber + 1 != playList.Count)
+                {
+                    ChangeVideo(playList[currentVideoNumber + 1], currentVideoNumber + 1);
+                }
+                else
+                {
+                    ChangeVideo(playList[0], 0);
+                }
+                mainVideo.Play();
+            }
+        }
+        public void SetVideoName()
+        {
+            nameOfTheVideoLabel.Content = Path.GetFileName(currentVideoName);
         }
     }
 }
