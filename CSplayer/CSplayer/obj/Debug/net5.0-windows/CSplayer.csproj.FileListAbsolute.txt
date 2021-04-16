@@ -5,7 +5,6 @@ D:\ДУТ\Diplom\Repository\CSplayer\CSplayer\bin\Debug\net5.0-windows\CSplayer.
 D:\ДУТ\Diplom\Repository\CSplayer\CSplayer\bin\Debug\net5.0-windows\CSplayer.dll
 D:\ДУТ\Diplom\Repository\CSplayer\CSplayer\bin\Debug\net5.0-windows\ref\CSplayer.dll
 D:\ДУТ\Diplom\Repository\CSplayer\CSplayer\bin\Debug\net5.0-windows\CSplayer.pdb
-D:\ДУТ\Diplom\Repository\CSplayer\CSplayer\obj\Debug\net5.0-windows\CSplayer.csprojAssemblyReference.cache
 D:\ДУТ\Diplom\Repository\CSplayer\CSplayer\obj\Debug\net5.0-windows\MainWindow.g.cs
 D:\ДУТ\Diplom\Repository\CSplayer\CSplayer\obj\Debug\net5.0-windows\App.g.cs
 D:\ДУТ\Diplom\Repository\CSplayer\CSplayer\obj\Debug\net5.0-windows\CSplayer_MarkupCompile.cache
@@ -20,3 +19,4 @@ D:\ДУТ\Diplom\Repository\CSplayer\CSplayer\obj\Debug\net5.0-windows\CSplayer.
 D:\ДУТ\Diplom\Repository\CSplayer\CSplayer\obj\Debug\net5.0-windows\ref\CSplayer.dll
 D:\ДУТ\Diplom\Repository\CSplayer\CSplayer\obj\Debug\net5.0-windows\CSplayer.pdb
 D:\ДУТ\Diplom\Repository\CSplayer\CSplayer\obj\Debug\net5.0-windows\CSplayer.genruntimeconfig.cache
+D:\ДУТ\Diplom\Repository\CSPlayer\CSplayer\obj\Debug\net5.0-windows\CSplayer.csprojAssemblyReference.cache
