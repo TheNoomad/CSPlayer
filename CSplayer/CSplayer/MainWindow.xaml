@@ -6,8 +6,30 @@
         xmlns:local="clr-namespace:CSplayer"
         mc:Ignorable="d"
         Title="CSPlayer" Height="565" Width="728" MinWidth="800" MinHeight="600">
+    <Window.Resources>
+        <ImageBrush x:Key="ButtonImage" ImageSource="/playlist.png"></ImageBrush>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource ButtonImage}"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                    Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" RecognizesAccessKey="True"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="Blue" />
+                                <Setter Property="Cursor" Value="Hand" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
-
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="Black"/>
@@ -29,19 +51,19 @@
                     <ColumnDefinition Width="386*"/>
                     <ColumnDefinition Width="193*"/>
                 </Grid.ColumnDefinitions>
-                <Button x:Name="stopButton" BorderThickness="0" Margin="84,16,87,16" MaxWidth="35" MaxHeight="35" Content="sop" Click="stopButton_Click" Grid.Column="2">
+                <Button x:Name="stopButton" BorderThickness="0" Margin="84,16,87,16" MaxWidth="35" MaxHeight="35" Content="" Click="stopButton_Click" Grid.Column="2">
                     <Button.Background>
-                        <ImageBrush ImageSource="/Material/stop-button.png"/>
+                        <ImageBrush ImageSource="/Material/stop-button.png" TileMode="Tile"/>
                     </Button.Background>
                 </Button>
                 <Button x:Name="playButton" BorderThickness="0" Margin="12,19,166,18" MaxWidth="35" MaxHeight="35" Content="" Click="playButton_Click" Grid.Column="2">
                     <Button.Background>
-                        <ImageBrush ImageSource="/Material/play.png"/>
+                        <ImageBrush ImageSource="/Material/play.png" TileMode="Tile"/>
                     </Button.Background>
                 </Button>
                 <Button x:Name="pauseButton" BorderThickness="0" Margin="47,21,131,21" MaxWidth="35" MaxHeight="35" Content="" Click="pauseButton_Click" Grid.Column="2">
                     <Button.Background>
-                        <ImageBrush ImageSource="/Material/pause-multimedia-big-gross-symbol-lines.png"/>
+                        <ImageBrush ImageSource="/Material/pause-multimedia-big-gross-symbol-lines.png" TileMode="Tile"/>
                     </Button.Background>
                 </Button>
                 <Label x:Name="volumeLabel" Content="Volume" Grid.Column="3" HorizontalAlignment="Left" Margin="237,10,0,0" VerticalAlignment="Top" Width="56" Panel.ZIndex="2" Foreground="White" MaxWidth="80" MaxHeight="25" RenderTransformOrigin="1.356,0.56" Height="25"/>
@@ -98,7 +120,7 @@
                     </ScrollBar.Background>
                 </ScrollBar>
                 <Label x:Name="videoTime" Content="No video playing" Grid.Column="3" Foreground="White" Margin="385,40,0,0" Grid.ColumnSpan="2"/>
-                <Button x:Name="previousVideoButton" BorderThickness="0" Margin="120,18,51,16" MaxWidth="35" MaxHeight="35" Content="rvs" Grid.Column="2" Click="previousVideoButton_Click" RenderTransformOrigin="0.5,0.5">
+                <Button x:Name="previousVideoButton" BorderThickness="0" Margin="120,16,47,15" MaxWidth="35" MaxHeight="35" Content="" Grid.Column="2" Click="previousVideoButton_Click" RenderTransformOrigin="0.5,0.5" >
                     <Button.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -108,10 +130,10 @@
                         </TransformGroup>
                     </Button.RenderTransform>
                     <Button.Background>
-                        <ImageBrush ImageSource="/Material/rewind-button.png"/>
+                        <ImageBrush ImageSource="/Material/rewind-button.png" TileMode="Tile"/>
                     </Button.Background>
                 </Button>
-                <Button x:Name="nextVideoButton" BorderThickness="0" Margin="156,14,5,12" MaxWidth="35" MaxHeight="35" Content="xt" Grid.Column="2" Click="nextVideoButton_Click" RenderTransformOrigin="0.5,0.5">
+                <Button x:Name="nextVideoButton" BorderThickness="0" Margin="165,19,5,18" MaxWidth="35" MaxHeight="35" Content="" Grid.Column="2" Click="nextVideoButton_Click" RenderTransformOrigin="0.5,0.5">
                     <Button.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -121,7 +143,7 @@
                         </TransformGroup>
                     </Button.RenderTransform>
                     <Button.Background>
-                        <ImageBrush ImageSource="/Material/rewind-button.png"/>
+                        <ImageBrush ImageSource="/Material/rewind-button.png" TileMode="Tile" Stretch="Fill"/>
                     </Button.Background>
                 </Button>
                 <Label x:Name="nameOfTheVideoLabel" Content="No video playing" Grid.Column="3" Margin="385,8,0,0" VerticalAlignment="Top" Foreground="White" Height="32" Grid.ColumnSpan="2"/>
