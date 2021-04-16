@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="CSPlayer" Height="565" Width="728" MinWidth="800" MinHeight="600">
     <Grid>
+
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="Black"/>
@@ -28,16 +29,101 @@
                     <ColumnDefinition Width="386*"/>
                     <ColumnDefinition Width="193*"/>
                 </Grid.ColumnDefinitions>
-                <Button x:Name="stopButton" Margin="86,16,87,18" MaxWidth="35" MaxHeight="35" Content="stop" Click="stopButton_Click" Grid.Column="2"/>
-                <Button x:Name="playButton" Margin="4,12,168,14" MaxWidth="35" MaxHeight="35" Content="play" Click="playButton_Click" Grid.Column="2"/>
-                <Button x:Name="pauseButton" Margin="45,16,127,18" MaxWidth="35" MaxHeight="35" Content="pause" Click="pauseButton_Click" Grid.Column="2"/>
+                <Button x:Name="stopButton" BorderThickness="0" Margin="84,16,87,16" MaxWidth="35" MaxHeight="35" Content="sop" Click="stopButton_Click" Grid.Column="2">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Material/stop-button.png"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="playButton" BorderThickness="0" Margin="12,19,166,18" MaxWidth="35" MaxHeight="35" Content="" Click="playButton_Click" Grid.Column="2">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Material/play.png"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="pauseButton" BorderThickness="0" Margin="47,21,131,21" MaxWidth="35" MaxHeight="35" Content="" Click="pauseButton_Click" Grid.Column="2">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Material/pause-multimedia-big-gross-symbol-lines.png"/>
+                    </Button.Background>
+                </Button>
                 <Label x:Name="volumeLabel" Content="Volume" Grid.Column="3" HorizontalAlignment="Left" Margin="237,10,0,0" VerticalAlignment="Top" Width="56" Panel.ZIndex="2" Foreground="White" MaxWidth="80" MaxHeight="25" RenderTransformOrigin="1.356,0.56" Height="25"/>
-                <Button x:Name="addVideoButton" Content="AddVideo_button&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Center" Height="40" Width="123" MaxWidth="500" MaxHeight="40" Grid.Column="3" Click="addVideoButton_Click" Margin="19,0,0,0"/>
-                <Slider x:Name="volumeSlide" Grid.Column="3" HorizontalAlignment="Left" Margin="183,34,0,0" VerticalAlignment="Top" Width="180" Value="5" TickFrequency="0.1" ValueChanged="volumeSlide_ValueChanged" Maximum="1" LargeChange="0.1" Height="18"/>
-                <ScrollBar x:Name="videoBar" Margin="9,-10,9,63" Orientation="Horizontal" Width="auto" Grid.ColumnSpan="5" Maximum="50" Scroll="videoBar_Scroll" PreviewMouseDown="videoBar_PreviewMouseDown"/>
+                <Button x:Name="addVideoButton" BorderThickness="0" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Height="41" Width="50" MaxWidth="500" MaxHeight="40" Grid.Column="3" Click="addVideoButton_Click" Margin="45,18,0,0">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/playlist.png"/>
+                    </Button.Background>
+                </Button>
+                <Slider x:Name="volumeSlide" Grid.Column="3" HorizontalAlignment="Left" Margin="183,34,0,0" VerticalAlignment="Top" Width="180" Value="5" TickFrequency="0.1" ValueChanged="volumeSlide_ValueChanged" Maximum="1" LargeChange="0.1" Height="18">
+                    <Slider.Background>
+                        <VisualBrush>
+                            <VisualBrush.Visual>
+                                <Grid>
+                                    <Rectangle Width="1" Height="1">
+                                        <Rectangle.Fill>
+                                            <LinearGradientBrush EndPoint="0,0" StartPoint="1,0">
+                                                <GradientStop Color="Red" Offset="0" />
+                                                <GradientStop Color="Yellow" Offset="0.5" />
+                                                <GradientStop Color="Green" Offset="1" />
+                                            </LinearGradientBrush>
+                                        </Rectangle.Fill>
+                                    </Rectangle>
+                                    <Rectangle Width="1" Height="1">
+                                        <Rectangle.Fill>
+                                            <LinearGradientBrush EndPoint="0,0" StartPoint="0.1,0" SpreadMethod="Repeat">
+                                                <GradientStop Color="Transparent" Offset="0.5" />
+                                                <GradientStop Color="White" Offset="0.5" />
+                                                <GradientStop Color="White" Offset="0.55" />
+                                                <GradientStop Color="Transparent" Offset="0.55" />
+                                            </LinearGradientBrush>
+                                        </Rectangle.Fill>
+                                    </Rectangle>
+                                    <Rectangle Width="1" Height="1">
+                                        <Rectangle.Fill>
+                                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0" SpreadMethod="Repeat">
+                                                <GradientStop Color="#11FFFFFF" Offset="0" />
+                                                <GradientStop Color="#22FFFFFF" Offset="0.5" />
+                                                <GradientStop Color="#11000000" Offset="0.5" />
+                                                <GradientStop Color="#11000000" Offset="1" />
+                                            </LinearGradientBrush>
+                                        </Rectangle.Fill>
+                                    </Rectangle>
+                                </Grid>
+                            </VisualBrush.Visual>
+                        </VisualBrush>
+                    </Slider.Background>
+                </Slider>
+                <ScrollBar x:Name="videoBar" Margin="9,-10,9,63" Orientation="Horizontal" Width="auto" Grid.ColumnSpan="5" Maximum="50" Scroll="videoBar_Scroll" PreviewMouseDown="videoBar_PreviewMouseDown">
+                    <ScrollBar.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black"/>
+                            <GradientStop Color="White" Offset="1"/>
+                        </LinearGradientBrush>
+                    </ScrollBar.Background>
+                </ScrollBar>
                 <Label x:Name="videoTime" Content="No video playing" Grid.Column="3" Foreground="White" Margin="385,40,0,0" Grid.ColumnSpan="2"/>
-                <Button x:Name="previousVideoButton" Margin="129,16,45,18" MaxWidth="35" MaxHeight="35" Content="prvs" Grid.Column="2" Click="previousVideoButton_Click"/>
-                <Button x:Name="nextVideoButton" Margin="172,16,2,18" MaxWidth="35" MaxHeight="35" Content="nxt" Grid.Column="2" Click="nextVideoButton_Click"/>
+                <Button x:Name="previousVideoButton" BorderThickness="0" Margin="120,18,51,16" MaxWidth="35" MaxHeight="35" Content="rvs" Grid.Column="2" Click="previousVideoButton_Click" RenderTransformOrigin="0.5,0.5">
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-360.527"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Button.RenderTransform>
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Material/rewind-button.png"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="nextVideoButton" BorderThickness="0" Margin="156,14,5,12" MaxWidth="35" MaxHeight="35" Content="xt" Grid.Column="2" Click="nextVideoButton_Click" RenderTransformOrigin="0.5,0.5">
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="180.43"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Button.RenderTransform>
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Material/rewind-button.png"/>
+                    </Button.Background>
+                </Button>
                 <Label x:Name="nameOfTheVideoLabel" Content="No video playing" Grid.Column="3" Margin="385,8,0,0" VerticalAlignment="Top" Foreground="White" Height="32" Grid.ColumnSpan="2"/>
             </Grid>
             <Grid x:Name="videoBlock" Width="auto">

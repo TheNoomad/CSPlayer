@@ -4,6 +4,25 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>video-player.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="forward-button.png" />
+    <None Remove="pause-multimedia-big-gross-symbol-lines.png" />
+    <None Remove="play.png" />
+    <None Remove="playlist.png" />
+    <None Remove="rewind-button.png" />
+    <None Remove="stop-button.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="forward-button.png" />
+    <Resource Include="Material\pause-multimedia-big-gross-symbol-lines.png" />
+    <Resource Include="Material\play.png" />
+    <Resource Include="Material\rewind-button.png" />
+    <Resource Include="Material\stop-button.png" />
+    <Resource Include="playlist.png" />
+  </ItemGroup>
 
 </Project>
