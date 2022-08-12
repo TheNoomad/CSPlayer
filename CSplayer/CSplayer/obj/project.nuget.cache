@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "vBuW2chCQbDr2XHml8lq+MdXT16sZlqOFCk6n2LJV/RprsDO2JdIXXgZJE0BD26IIPSiw9zLvXyWkHNSh0QXeg==",
+  "dgSpecHash": "mxWLCiU483IrkLKnu2/YkBjZ2tIp7Z7Xjh655bwq3Dv2Yi7f487SZw05dIRIQ9IhEjAoi8HeFK7eomN5Y7xfDw==",
   "success": true,
-  "projectFilePath": "D:\\ДУТ\\Diplom\\Repository\\CSPlayer\\CSplayer\\CSplayer.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "D:\\Da\\CSPlayer\\CSplayer\\CSplayer\\CSplayer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Nomad\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.16\\microsoft.netcore.app.host.win-x64.5.0.16.nupkg.sha512",
+    "C:\\Users\\Nomad\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\Nomad\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\Nomad\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
